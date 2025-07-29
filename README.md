@@ -1,22 +1,22 @@
-# Proyecto de Prueba: T3 Stack + Next-Themes
+# Test Project: T3 Stack + Next-Themes
 
-Este es un proyecto de demostración construido con el **T3 Stack** que integra `next-themes` para la gestión de temas de la aplicación.
+This is a demo project built with the **T3 Stack** that integrates `next-themes` for theme management across the application.
 
-## Descripción
+## Description
 
-La aplicación consiste en un CRUD (Crear, Leer, Actualizar, Eliminar) básico de "posts". La característica principal es que el último post creado o actualizado tiene la capacidad de cambiar el tema general de la aplicación.
+The application features a basic CRUD (Create, Read, Update, Delete) for "posts". The key feature is that the most recently created or updated post can determine the global theme of the app.
 
-## Objetivo
+## Objective
 
-El propósito de este proyecto es testear y demostrar cómo se puede persistir el estado del tema de una aplicación Next.js en una base de datos y aplicarlo dinámicamente en el lado del cliente.
+The goal of this project is to test and showcase how to persist the theme state of a Next.js application in a database and dynamically apply it on the client side.
 
-## Características Principales
+## Main Features
 
-- **CRUD de Posts**: Funcionalidad completa para crear, leer, actualizar y eliminar posts.
-- **Cambio de Tema Dinámico**: Al crear o actualizar un post, se puede seleccionar un tema. Este tema se guarda en la base de datos y se aplica a toda la interfaz de usuario.
-- **Persistencia**: El tema seleccionado se persiste en la base de datos a través de Prisma, asegurando que la selección se mantenga entre sesiones.
+- **Post CRUD**: Full functionality to create, read, update, and delete posts.
+- **Dynamic Theme Switching**: When creating or updating a post, a theme can be selected. This theme is saved to the database and applied to the entire UI.
+- **Persistence**: The selected theme is stored in the database using Prisma, ensuring it persists between sessions.
 
-## Stack Tecnológico
+## Tech Stack
 
 - [Next.js](https://nextjs.org)
 - [Prisma](https://prisma.io)
@@ -26,54 +26,53 @@ El propósito de este proyecto es testear y demostrar cómo se puede persistir e
 - [NextAuth.js](https://next-auth.js.org)
 - [next-themes](https://github.com/pacocoursey/next-themes)
 
-## Cómo Empezar
+## Getting Started
 
-1.  **Clonar el repositorio:**
+1. **Clone the repository:**
 
-    ```bash
-    git clone https://github.com/sbtcontreras/next-trpc-theme-switcher
-    cd next-trpc-theme-switcher
-    ```
+   ```bash
+   git clone https://github.com/sbtcontreras/next-trpc-theme-switcher
+   cd next-trpc-theme-switcher
+   ```
 
-2.  **Instalar dependencias:**
+2. **Install dependencies:**
 
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
-3.  **Configurar variables de entorno:**
-    Copia el archivo `.env.example` a un nuevo archivo llamado `.env` y configúralo.
+3. **Set up environment variables:**
+   Copy the `.env.example` file to a new file named `.env` and configure it.
 
-    ```bash
-    cp .env.example .env
-    ```
+   ```bash
+   cp .env.example .env
+   ```
 
-    El contenido del `.env` debería ser similar a este:
+   Your `.env` file should look like this:
 
-    ```env
-    # Prisma
-    DATABASE_URL="postgresql://postgres:mypassword@localhost:5433/theme-switcher-crud"
+   ```env
+   # Prisma
+   DATABASE_URL="postgresql://postgres:mypassword@localhost:5433/theme-switcher-crud"
+   ```
 
-    ```
+4. **Start the database:**
+   Run the following script to create and start the database in a Docker container.
 
-4.  **Iniciar la base de datos:**
-    Ejecuta el siguiente script para crear y iniciar la base de datos en un contenedor de Docker.
+   ```bash
+   ./start-database.sh
+   ```
 
-    ```bash
-    ./start-database.sh
-    ```
+5. **Sync the database schema:**
+   This command pushes the Prisma schema to the database.
 
-5.  **Sincronizar la base de datos:**
-    Este comando carga el esquema de Prisma en la base de datos.
+   ```bash
+   pnpm db:push
+   ```
 
-    ```bash
-    pnpm db:push
-    ```
+6. **Start the development server:**
 
-6.  **Iniciar el servidor de desarrollo:**
+   ```bash
+   pnpm dev
+   ```
 
-    ```bash
-    pnpm dev
-    ```
-
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the app running.
