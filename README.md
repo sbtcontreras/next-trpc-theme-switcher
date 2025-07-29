@@ -31,8 +31,8 @@ El propósito de este proyecto es testear y demostrar cómo se puede persistir e
 1.  **Clonar el repositorio:**
 
     ```bash
-    git clone <URL_DEL_REPOSITORIO>
-    cd <NOMBRE_DEL_PROYECTO>
+    git clone https://github.com/sbtcontreras/next-trpc-theme-switcher
+    cd next-trpc-theme-switcher
     ```
 
 2.  **Instalar dependencias:**
